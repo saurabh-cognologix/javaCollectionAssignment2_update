@@ -6,52 +6,37 @@ import corejava.collection.assignmentset2.question4.model.Student;
 
 public class AverageMarksCalculator {
 
-	// map input array to list of Student
-	public List<Student> mapInputArrayToListOfStudent(String[] studentData) {
-		List<Student> studentList = new ArrayList<>();
+	// get lowest id from the list of students
+	private List<Student> studentList;
 
-		for (String line : studentData ) {
-			String[] values = line.split(",");
-
-			Integer id = Integer.parseInt(values[0].trim());
-			String subject = values[1].trim();
-			Integer marks = Integer.parseInt(values[2].trim());
-
-			Student student = new Student(id, subject, marks);
-			studentList.add(student);
-		}
-		return studentList;
+	public AverageMarksCalculator(List<Student> studentList) {
+		this.studentList = studentList;
 	}
 
 	// get lowest id from the list of students
-	public Integer getLowestIdFromTheListOfStudents(List<Student> inputList) {
-		Integer lowestId = inputList.get(0).getStudentId();
-
-		for (Student student : inputList ) {
-			if (lowestId > student.getStudentId()){
-				lowestId = student.getStudentId();
+	public Integer getLowestIdFromTheListOfStudents() {
+		Integer lowestID = studentList.get(0).getStudentId();
+		for(Student student: studentList) {
+			if(student.getStudentId() < lowestID) {
+				lowestID = student.getStudentId();
 			}
 		}
-		return lowestId;
+		return lowestID;
 	}
-
 
 	// get average marks for the student having lowest id
-	public Double getAverageMarksForTheStudent(List<Student> studentList) {
-		Integer id = getLowestIdFromTheListOfStudents(studentList);
-		Double sum = 0.0;
-		Double average;
-
-		for (Student student : studentList){
-			if (id == student.getStudentId()){
+	public Double getAverageMarksForTheStudent(Integer id) {
+		Double averageMarks = 0.0;
+		Integer sum = 0;
+		int count = 0;
+		for(Student student: studentList) {
+			if(student.getStudentId() == id) {
 				sum += student.getStudentMarks();
+				count++;
 			}
 		}
-		average = sum / studentList.size();
-		return average;
+		averageMarks = (double) (sum/count);
+		return averageMarks;
 	}
-
-
-
 
 }
