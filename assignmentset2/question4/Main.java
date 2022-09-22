@@ -10,15 +10,13 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		String[] inputData = { "22, Data Structures, 45", "23, English, 52", "22, English, 51",
-				"26, Data Structures, 72", "23, Data Structures, 61", "24, English, 81", };
 
-
+        String inputFilePath = "JavaTraining/src/corejava/collection/assignmentset2/question4/input/input.csv";
 		StudentInputParser inputParser = new StudentInputParser();
-		List<Student> studentList = inputParser.parseArray(inputData);
+		List<Student> studentList = inputParser.parseCSVFile(inputFilePath);
+
 
 		AverageMarksCalculator averageMarksCalculator = new AverageMarksCalculator(studentList);
-
 		// get lowest id from the list of students
 		Integer lowestId = averageMarksCalculator.getLowestIdFromTheListOfStudents();
 

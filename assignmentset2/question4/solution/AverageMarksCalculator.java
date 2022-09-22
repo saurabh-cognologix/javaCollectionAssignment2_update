@@ -5,9 +5,7 @@ import java.util.List;
 import corejava.collection.assignmentset2.question4.model.Student;
 
 public class AverageMarksCalculator {
-
-	// get lowest id from the list of students
-	private List<Student> studentList;
+	private final List<Student> studentList;
 
 	public AverageMarksCalculator(List<Student> studentList) {
 		this.studentList = studentList;
@@ -21,22 +19,24 @@ public class AverageMarksCalculator {
 				lowestID = student.getStudentId();
 			}
 		}
+//		System.out.println("Lowest id is " +lowestID);
 		return lowestID;
 	}
 
 	// get average marks for the student having lowest id
 	public Double getAverageMarksForTheStudent(Integer id) {
-		Double averageMarks = 0.0;
+//		long countt = studentList.stream().filter((e)->e.getStudentId()).count();
+//		Integer c = studentList.stream().filter((e)->id).count();
 		Integer sum = 0;
-		int count = 0;
+		Integer count = 0;
 		for(Student student: studentList) {
 			if(student.getStudentId() == id) {
 				sum += student.getStudentMarks();
 				count++;
 			}
 		}
-		averageMarks = (double) (sum/count);
-		return averageMarks;
+		return (double) (sum/count);
+
 	}
 
 }
