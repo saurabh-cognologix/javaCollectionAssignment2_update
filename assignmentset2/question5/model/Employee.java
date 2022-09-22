@@ -1,37 +1,37 @@
 package corejava.collection.assignmentset2.question5.model;
 
 public class Employee {
-    private long salary;
-    private String id;
+    private Integer id;
+    private Long salary;
 
-    public Employee(long salary, String id) {
-        this.salary = salary;
+    public Employee(Integer id, Long salary) {
         this.id = id;
+        this.salary = salary;
     }
 
     public Employee() {
     }
 
-    public long getSalary() {
-        return salary;
-    }
-
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    @Override
-    public String toString() {
-        String placeholder = "id ={0}, Salary={1}";
-        return "Employee{" +
-                "salary=" + salary +
-                ", id='" + id + '\'' +
-                '}';
+    public Long getSalary() {
+        return salary;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setSalary(Long salary) {
+        this.salary = salary;
+    }
+
     public  void setEmployeeById(String str[]){
         if(this.salary<Long.parseLong(str[3].trim())){
             this.salary = Long.parseLong(str[3]);
-            this.id = str[0].trim();
+            this.id = Integer.parseInt(str[0].trim());
         }
     }
 }

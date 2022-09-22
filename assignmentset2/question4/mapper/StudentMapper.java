@@ -10,6 +10,7 @@ public class StudentMapper {
         Integer studMarks = Integer.parseInt(arr[2]);
 
         Student student = new Student(studId, studSubject, studMarks);
+
         return student;
     }
 }

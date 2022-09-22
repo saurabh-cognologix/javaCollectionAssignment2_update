@@ -1,0 +1,9 @@
+Mail Server, Authentication Library, 6
+Video Call Server, Authentication Library, 7
+Mail Server, Data Storage Library, 10
+Chat Server, Data Storage Library, 11
+Mail Server, Search Library, 6
+Chat Server, Authentication Library, 8
+Chat Server, Presence Library, 2
+Video Call Server, Data Storage Library, 10
+Video Call Server, Video Compression Library, 3

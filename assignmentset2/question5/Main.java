@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+
+import static corejava.collection.assignmentset2.question5.mapper.EmployeeMapper.map;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,6 +27,7 @@ public class Main {
        }
         Solution solution = new Solution();
         solution.splitEmployeeData((ArrayList<String>) inputData);
+        map(inputData.toString());
         System.out.println(solution.tempMap.get("Engineering").getId());
         System.out.println(solution.tempMap.get("Testing").getId());
     }
