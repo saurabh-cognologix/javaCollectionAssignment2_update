@@ -20,7 +20,7 @@ public class StudentInputParser {
         return list;
     }*/
     public List<Student> parseCSVFile(String filePath) {
-        List<Student> list = new ArrayList<Student>();
+        List<Student> list = new ArrayList<>();
         BufferedReader br = null;
         String st;
         try {
