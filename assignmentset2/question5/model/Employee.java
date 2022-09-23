@@ -1,37 +1,60 @@
 package corejava.collection.assignmentset2.question5.model;
 
 public class Employee {
-    private Integer id;
-    private Long salary;
+   private Integer employeeId;
+   private String employeeName;
+   private String departmentName;
+   private Long employeeSalary;
 
-    public Employee(Integer id, Long salary) {
-        this.id = id;
-        this.salary = salary;
+    public Employee(Integer employeeId, String employeeName, String departmentName, Long employeeSalary) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.departmentName = departmentName;
+        this.employeeSalary = employeeSalary;
     }
 
     public Employee() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getEmployeeId() {
+        return employeeId;
     }
 
-    public Long getSalary() {
-        return salary;
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setSalary(Long salary) {
-        this.salary = salary;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public  void setEmployeeById(String str[]){
-        if(this.salary<Long.parseLong(str[3].trim())){
-            this.salary = Long.parseLong(str[3]);
-            this.id = Integer.parseInt(str[0].trim());
-        }
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public Long getEmployeeSalary() {
+        return employeeSalary;
+    }
+
+    public void setEmployeeSalary(Long employeeSalary) {
+        this.employeeSalary = employeeSalary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", employeeName='" + employeeName + '\'' +
+                ", departmentName='" + departmentName + '\'' +
+                ", employeeSalary=" + employeeSalary +
+                '}';
     }
 }

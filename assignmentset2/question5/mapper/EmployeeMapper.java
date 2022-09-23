@@ -7,11 +7,13 @@ import java.util.ArrayList;
 public class EmployeeMapper {
     public  static Employee map(String data){
         String[] arr = data.split(",");
-        Integer empId = Integer.parseInt(arr[0].trim());
-       // String empDepartment = arr[2];
-        Long empSalary = Long.parseLong(arr[3].trim());
-        Employee employee = new Employee(empId,empSalary);
-        System.out.println(employee);
+        Integer employeeId= Integer.parseInt(arr[0].trim());
+        String employeeName = arr[1].trim();
+        String departmentName = arr[2].trim();
+        Long employeeSalary = Long.parseLong(arr[3].trim());
+
+        Employee employee = new Employee(employeeId,employeeName,departmentName,employeeSalary);
+      //  System.out.println(employee);
         return employee;
     }
 }
