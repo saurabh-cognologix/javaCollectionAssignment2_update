@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerParser {
-   public List<Customer> parseCSVFile(String filePath){
+   public List<Customer> parseCSVFile(String filePath)   {
        List<Customer> inputCustomerList = new ArrayList<>();
        BufferedReader br = null;
        String st;
@@ -16,17 +16,21 @@ public class CustomerParser {
            File file = new File(filePath);
            br = new BufferedReader(new FileReader(file));
            while ((st = br.readLine())!=null){
-               Customer library = CustomerMapper.map(st);
-               inputCustomerList.add(library);
+               Customer customer = CustomerMapper.map(st);
+               inputCustomerList.add(customer);
            }
        } catch (IOException e) {
            throw new RuntimeException(e);
+
        } finally {
            if(br!= null){
                try {
                    br.close();
                }catch (IOException ex){
                    throw new RuntimeException(ex);
+                  // throw new IOException(ex);
+
+
                }
            }
        }
