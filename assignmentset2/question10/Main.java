@@ -20,7 +20,10 @@ public class Main {
     }
 
     //pop (remove value at back);
-
+    public Node deleteNode(Node delete){
+        //Base Case
+        return null;
+    }
 
 
     //shift (remove value at front).
