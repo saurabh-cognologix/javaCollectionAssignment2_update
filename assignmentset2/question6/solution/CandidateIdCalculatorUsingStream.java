@@ -16,11 +16,15 @@ public class CandidateIdCalculatorUsingStream {
                         Constituency::getCandidateId,
                         Constituency::getVotes
                 ));
-//        System.out.println("Id and their Votes: ");
-//        candidateVotes.forEach((k,v)-> System.out.println(k+" : "+v));
-        /*
-        *
-        * */
+/*
+*   maxBy() :
+*1)  methods return a BinaryOperator which returns the greater of the two elements based on a given comparator
+*2) Parameter:  It takes in only one parameter namely, comparator which is an object of the Comparator class.
+*
+* Binary Operator:
+* It represents a binary operator which takes two operands and operates on them to produce a result.
+*
+* */
         Map<String,Integer> map = votesList.stream()
                         .collect(Collectors.toMap(
                                 Constituency::getConstituencyName,
