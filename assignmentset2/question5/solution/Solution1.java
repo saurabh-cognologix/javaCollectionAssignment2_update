@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class Solution1 {
     public Map<String,Integer> getEmployeeId(List<Employee> employeeList){
-        /*          Method 1         */
+
         /* 1)  Java Optional class provided a way to deal with null values.
         *  2)  It is used to represent a value is present or not.
         *  3)  A null pointer exception is common issue in java application. To prevent this,
@@ -21,6 +21,9 @@ public class Solution1 {
         *      we use it in our program. Option provide a bettar way to handle this situation.
         *  4) Optinal class Overcome the null pointer exception
         * */
+
+        /*          Method 1         */
+
         Map<String, Optional<Integer>> tempMap = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartmentName,
                         Collectors.maxBy(Comparator.comparing(Employee::getEmployeeSalary))))
