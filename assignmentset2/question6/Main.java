@@ -3,6 +3,7 @@ package corejava.collection.assignmentset2.question6;
 import corejava.collection.assignmentset2.question6.model.Constituency;
 import corejava.collection.assignmentset2.question6.parser.ConstituencyParser;
 import corejava.collection.assignmentset2.question6.solution.CandidateIdCalculator;
+import corejava.collection.assignmentset2.question6.solution.CandidateIdCalculatorUsingStream;
 
 import java.util.List;
 import java.util.Map;
@@ -18,5 +19,9 @@ public class Main {
         List<Integer> id = candidateIdCalculator.getIdOfMaxVotes(constituencyData,map);
 
         System.out.println(id);
+        CandidateIdCalculatorUsingStream candidateIdCalculatorUsingStream = new CandidateIdCalculatorUsingStream();
+        Map<String,Integer> streamMap =candidateIdCalculatorUsingStream.getIdOfCandidate(constituencyData);
+        System.out.println("--------------Using Stream-------------------");
+        streamMap.forEach((k,v)-> System.out.println(k+" :  "+v));
     }
 }
