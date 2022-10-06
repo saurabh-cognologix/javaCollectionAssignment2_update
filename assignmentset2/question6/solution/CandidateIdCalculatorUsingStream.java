@@ -18,6 +18,9 @@ public class CandidateIdCalculatorUsingStream {
                 ));
 //        System.out.println("Id and their Votes: ");
 //        candidateVotes.forEach((k,v)-> System.out.println(k+" : "+v));
+        /*
+        *
+        * */
         Map<String,Integer> map = votesList.stream()
                         .collect(Collectors.toMap(
                                 Constituency::getConstituencyName,
