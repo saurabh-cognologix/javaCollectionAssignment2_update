@@ -22,7 +22,9 @@ public class Solution1 {
         *  4) Optinal class Overcome the null pointer exception
         * */
 
-        /*          Method 1         */
+        /*
+         Method 1
+        */
 
         Map<String, Optional<Integer>> tempMap = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartmentName,
@@ -37,9 +39,9 @@ public class Solution1 {
         *   Method 2
         * */
 
-        System.out.println();
+
         System.out.println("-----------------Method 2 --------------");
-        System.out.println();
+
         Map<String, Optional<Integer>> result =  employeeList.stream()
                 .collect(Collectors.groupingBy(
                         Employee::getDepartmentName,
@@ -52,9 +54,9 @@ public class Solution1 {
         /*
         * Method 3
         * */
-        System.out.println();
+
         System.out.println("-----------------Method 3 --------------");
-        System.out.println();
+
 
         Map<Integer, Long> employeeSalary = employeeList.stream()
                 .collect(Collectors.toMap(Employee::getEmployeeId, Employee::getEmployeeSalary));
