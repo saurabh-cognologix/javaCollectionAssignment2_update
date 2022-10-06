@@ -60,6 +60,7 @@ public class Solution1 {
 
         Map<Integer, Long> employeeSalary = employeeList.stream()
                 .collect(Collectors.toMap(Employee::getEmployeeId, Employee::getEmployeeSalary));
+       employeeSalary.forEach((k,v)-> System.out.println(k+" : "+v));
 
         Map<String, Integer> retVal = employeeList.stream()
                 .collect(Collectors.toMap(

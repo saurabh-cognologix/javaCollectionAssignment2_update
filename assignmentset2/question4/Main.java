@@ -3,6 +3,7 @@ package corejava.collection.assignmentset2.question4;
 import corejava.collection.assignmentset2.question4.model.Student;
 import corejava.collection.assignmentset2.question4.parser.StudentInputParser;
 import corejava.collection.assignmentset2.question4.solution.AverageMarksCalculator;
+import corejava.collection.assignmentset2.question4.solution.AverageMarksCalculatorUsingStream;
 
 
 import java.util.List;
@@ -25,7 +26,14 @@ public class Main {
 
 		// print the results
 		System.out.println("Average marks of student with lowest Id " + lowestId + " is: " + average);
-		
+
+		System.out.println("-------------------Using Stream-----------------");
+
+		AverageMarksCalculatorUsingStream averageMarksCalculatorUsingStream = new AverageMarksCalculatorUsingStream();
+		Student lowestIdStream = averageMarksCalculatorUsingStream.getLowestIdStudent(studentList);
+		Integer numberOfLowestId = averageMarksCalculatorUsingStream.countingLowestId(studentList,lowestIdStream);
+		Double averageMarks = averageMarksCalculatorUsingStream.getAverageMarks(studentList,numberOfLowestId,lowestIdStream);
+		System.out.println(averageMarks);
 
 	}
 
