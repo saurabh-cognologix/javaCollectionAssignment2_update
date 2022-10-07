@@ -25,6 +25,8 @@ public class Main {
 
         System.out.println("------------Using Stream --------------------");
         FetchOutDatedVersionUsingStream fetchOutDatedVersionUsingStream =new FetchOutDatedVersionUsingStream();
-        fetchOutDatedVersionUsingStream.getHighestVersionStream(llist);
+        Map<String,Integer> tempMap = fetchOutDatedVersionUsingStream.getHighestVersionStream(llist);
+        Set<String> outDatedVersionSetStream = fetchOutDatedVersionUsingStream.getOutDatedVersionStream(llist,tempMap);
+        outDatedVersionSetStream.forEach(System.out::println);
     }
 }
