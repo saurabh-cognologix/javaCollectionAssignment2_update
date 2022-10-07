@@ -4,6 +4,7 @@ package corejava.collection.assignmentset2.question3;
 import corejava.collection.assignmentset2.question3.model.Library;
 import corejava.collection.assignmentset2.question3.parser.LibraryInputParser;
 import corejava.collection.assignmentset2.question3.solution.FetchOutDatedVersion;
+import corejava.collection.assignmentset2.question3.solution.FetchOutDatedVersionUsingStream;
 
 import java.util.List;
 import java.util.Map;
@@ -21,5 +22,9 @@ public class Main {
 
          Set<String> outDatedVersionSet = fetchOutDatedVersion.getOutDatedVersion(llist,map);
         outDatedVersionSet.forEach(System.out::println);
+
+        System.out.println("------------Using Stream --------------------");
+        FetchOutDatedVersionUsingStream fetchOutDatedVersionUsingStream =new FetchOutDatedVersionUsingStream();
+        fetchOutDatedVersionUsingStream.getHighestVersionStream(llist);
     }
 }
