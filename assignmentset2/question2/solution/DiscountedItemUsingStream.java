@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class DiscountedItemUsingStream {
     //This function is used to find each product with heighest price
     // In key -> product Name
-    //& In Value heighest price
+    //& In Value -> heighest price of each product
     public Map<String,Double> productWithHighestPrice(List<Customer> customerList){
         return customerList.stream()
                 .collect(Collectors.groupingBy(
