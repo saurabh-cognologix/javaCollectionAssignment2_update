@@ -18,7 +18,7 @@ public class DiscountedItem {
                 tempMap.put(productName,price);
             }
         }
-        tempMap.forEach((k,v)-> System.out.println(k+ "   " +v));
+        //tempMap.forEach((k,v)-> System.out.println(k+ "   " +v));
         return tempMap;
     }
 
