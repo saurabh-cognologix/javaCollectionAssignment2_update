@@ -27,7 +27,9 @@ public class Main {
         System.out.println("-----------------Using Stream ------------------");
         DiscountedItemUsingStream discountedItemUsingStream = new DiscountedItemUsingStream();
         Map<String, Double> maxItemPrice =discountedItemUsingStream.productWithHighestPrice(customerList);
-        Set<String> customerSet = discountedItemUsingStream.customerListStream(customerList,maxItemPrice);
+        Map<String, Double> minItemPrice = discountedItemUsingStream.productWithLowestPrice(customerList);
+       // minItemPrice.forEach((k,v)-> System.out.println(k+" "+v));
+        Set<String> customerSet = discountedItemUsingStream.customerListStream(customerList,maxItemPrice,minItemPrice);
         customerSet.forEach(System.out::println);
     }
 }
