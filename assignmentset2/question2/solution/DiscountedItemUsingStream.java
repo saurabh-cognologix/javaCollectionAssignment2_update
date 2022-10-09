@@ -45,6 +45,10 @@ public class DiscountedItemUsingStream {
     }
 
     //Storing customer Name in set
+
+    /*
+    *
+    * */
     public Set<String> customerListStream(List<Customer> customerList,Map<String,Double> tempMap,Map<String,Double> minTempMap){
         return customerList.stream()
                 .filter(
